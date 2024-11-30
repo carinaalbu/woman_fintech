@@ -1,0 +1,82 @@
+Introduction to Svelte
+Svelte is a modern JavaScript framework designed to make building user interfaces simpler, faster, and more efficient. Unlike traditional frameworks like React or Vue, Svelte shifts much of the work from the browser to the build process. This unique approach results in smaller, faster applications with minimal runtime overhead.
+
+Svelte was created by Rich Harris and first released in 2016. Over the years, it has gained significant traction in the development community for its innovative concepts and performance advantages.
+
+Key Features of Svelte
+Compile-Time Framework:
+
+Svelte does not use a virtual DOM. Instead, it compiles components at build time into highly efficient JavaScript that directly manipulates the DOM.
+This eliminates the runtime framework, reducing the size of the application and improving performance.
+Declarative Syntax:
+
+Svelte’s syntax is simple and intuitive. Developers can declare how the UI should look, and Svelte ensures it is updated reactively when the state changes.
+Reactivity:
+
+State management in Svelte is built into the language. Simply updating a variable triggers a UI re-render, without the need for hooks or additional libraries.
+Scoped CSS:
+
+Svelte components include scoped styles by default. Developers can write CSS directly within their component files, and Svelte ensures the styles apply only to the component.
+Lightweight and Fast:
+
+Applications built with Svelte are smaller and load faster because there is no runtime library shipped to the browser.
+Why Use Svelte?
+Better Performance:
+
+By compiling components at build time, Svelte eliminates the need for a virtual DOM. This results in faster updates and lower memory usage.
+Simplified Development:
+
+Svelte’s syntax reduces boilerplate code, making it easier to create complex components with minimal effort.
+Smaller Bundle Sizes:
+
+The absence of a runtime framework means applications have smaller file sizes, leading to faster load times.
+Built-In State Management:
+
+Reactivity is built into Svelte, so developers don’t need external state management libraries like Redux.
+Core Concepts in Svelte
+Components:
+
+Svelte applications are made up of reusable components. Each component is a .svelte file that contains HTML, JavaScript, and CSS.
+Example:
+
+svelte
+Copiază codul
+<script>
+    let count = 0;
+
+    function increment() {
+        count += 1;
+    }
+</script>
+
+<button on:click={increment}>
+    Clicked {count} times
+</button>
+Reactive Declarations:
+
+Svelte uses the $: syntax for reactive declarations, allowing variables to automatically update when dependencies change.
+Example:
+
+svelte
+Copiază codul
+<script>
+    let name = 'World';
+    $: greeting = `Hello, ${name}!`;
+</script>
+
+<input bind:value={name}>
+<p>{greeting}</p>
+Scoped CSS:
+
+CSS written inside a Svelte component is scoped to that component by default.
+Example:
+
+svelte
+Copiază codul
+<style>
+    p {
+        color: red;
+    }
+</style>
+
+<p>This text is red
