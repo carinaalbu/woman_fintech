@@ -4,6 +4,20 @@ include_once "includes/header.php";
 $database = new Database();
 $db = $database->getConnection();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $profilePicture = null;
+    
+    // Handle file upload
+    if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
+        $fileName = uniqid() . '-' . basename($_FILES['profile_image']['name']);
+        $filePath = 'images/' . $fileName;
+
+        // Move uploaded file to the target directory
+        if (move_uploaded_file($_FILES['profile_image']['tmp_name'], $filePath)) {
+            $profilePicture = $fileName;
+        } else {
+            echo "<p>Error uploading file.</p>";
+        }
+    }
     $query = "UPDATE members
  SET first_name=?, last_name=?, email=?, profession=?,
  company=?, expertise=?, linkedin_profile=?
@@ -32,6 +46,10 @@ $member = $stmt->fetch(PDO::FETCH_ASSOC);
 <div class="form-container">
     <h2>Edit Member</h2>
     <form method="POST">
+        <div class="form-group">
+            <label>Profile Image</label>
+            <input type="file" name="profile_image" class="form-control">
+        </div>
         <div class="form-group">
             <label>First Name</label>
             <input type="text" name="first_name" class="form-control"

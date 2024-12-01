@@ -22,22 +22,33 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="members.php">Members</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="add_member.php">Add Member</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard.php">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="notifications.php">Notifications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="resources.php">Resources</a>
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="members.php">Members</a>
+                            <a class="dropdown-item" href="add_member.php">Add Member</a>
+                            <a class="dropdown-item" href="dashboard.php">Dashboard</a>
+                            <a class="dropdown-item" href="notifications.php">Notifications</a>
+                            <a class="dropdown-item" href="resources.php">Resources</a>
+                            <a class="dropdown-item" href="events.php">Events</a>
+                            <a class="dropdown-item" href="jobs.php">Jobs</a>
+                            <a class="dropdown-item" href="profile.php">Profile</a>
+                            <a class="dropdown-item" href="schedule_session.php">Schedule Mentorship Session</a>
+
+                        </div>
                     </li>
                 </ul>
+                <ul class="navbar-nav ml-auto">
+                <!-- Linkuri pentru login și register -->
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.php">Register</a>
+                </li>
+            </ul>
             </div>
             <button id="dark-mode-toggle" class="btn btn-secondary">Dark Mode</button>
         </div>

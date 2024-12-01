@@ -11,7 +11,9 @@ $searchQuery = isset($_GET['search']) ? $_GET['search'] : '';
 // Construire interogare dinamică
 $query = "SELECT * FROM resources WHERE 1";
 $params = [];
-$filePath = '.\\articles\\';
+$filePath = '.\\';
+
+// $filePath = '.\\articles\\';
 
 if (!empty($typeFilter)) {
 
@@ -60,7 +62,7 @@ $resources = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="row" style="padding: 15px 5px;">
     <?php foreach ($resources as $resource): ?>
         <div class="col-md-4">
-            <div class="thumb-nail-card card mb-4">
+            <div class="thumb-nail-card card member-card mb-4">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo htmlspecialchars($resource['title']); ?></h5>
                     <p class="card-text"><?php echo htmlspecialchars($resource['description']); ?></p>

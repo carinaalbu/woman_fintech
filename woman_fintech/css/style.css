@@ -109,10 +109,18 @@ form.form-inline{
     display: flex;
     flex-grow: 1;
 }
-.resource-content{
-    /* display: flex; */
 
-}
 .row{
     padding: 0px;
+}
+.jobs-list .job-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.jobs-list .job-item:hover {
+    transform: scale(1.02);
 }
